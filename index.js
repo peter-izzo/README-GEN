@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateReadMe = require("./utils/generateMarkdown.js");
 const { promisify } = require("util");
 
 const writeFileAsync = promisify(fs.writeFile);
@@ -21,38 +22,53 @@ const questions = [
     {
         type: "input",
         name: "installation",
-        message: "Contact info for bug reporting?"
+        message: "Please describe your installation process, if any: "
     },
     {
         type: "input",
         name: "usage",
-        message: "Contact info for bug reporting?"
+        message: "What is this project going used for?"
     },
     {
         type: "input",
         name: "license",
-        message: "Contact info for bug reporting?"
+        message: "Which license would be best for this project: Apache, Academic, GNU, ISC, MIT, Mozilla, Open, WTFPL",
+        choices: [
+            "Apache",
+            "Academic",
+            "GNU",
+            "ISC",
+            "MIT",
+            "Mozilla",
+            "Open",
+            "WTFPL"
+        ]
     },
     {
         type: "input",
         name: "contributing",
-        message: "Contact info for bug reporting?"
+        message: "Who are the contributors to this project?"
     },
     {
         type: "input",
         name: "tests",
-        message: "Contact info for bug reporting?"
+        message: "Are test included?"
     },
     {
         type: "input",
         name: "questions",
-        message: "Please enter your email address:"
+        message: "Who should I contact if there is an issue?"
     },
     {
         type: "input",
         name: "username",
         message: "What is your Github username?"
     },
+    {
+        type: "input",
+        name: "email",
+        message: "Please enter your email: "
+    }
 ];
 
 // Function to prompt user for answers
@@ -60,24 +76,13 @@ const promptUser = () => {
     return inquirer.prompt(questions)
 };
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-
-// TODO: CREATE README.MD FILE
-const generateReadMe = (answers) => {
-    return `
-    ### ${answers.title}
-    `
-};
-
-//
 
 // TODO: Create a function to initialize app
 const init = async () => {
     try {
         const answers = await promptUser();
         const md = generateReadMe(answers);
+        //Write readme to dist folder
         await writeFileAsync("READMETEST.md", md)
     } catch(err) {
         console.log(err);
