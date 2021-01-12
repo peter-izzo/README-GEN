@@ -3,19 +3,21 @@ function generateMarkdown(answers) {
   return `
   # ${answers.title} :metal:
 
-  ![badge](https://img.shields.io/badge/license-${answers.license}-brightgreen)) <br />
+  ![badge](https://img.shields.io/badge/license-${answers.license}-brightgreen)) 
+  <br />
+  This application is covered by the ${answers.license} license.
+
+  ## Table of Contents
+  - [Description](#Description)
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+  - [Lincense](#Lincense)
+  - [Contributing](#Contributing)
+  - [Tests](#Tests)
+  - [Questions](#Questions)
 
   ## Description  :clipboard:
   ${answers.description}
-
-  ## Table of Contents
-  -[Description](#description)
-  -[Installation](#installation)
-  -[Usage](#usage)
-  -[Lincense](#lincense)
-  -[Contributing](#contributing)
-  -[Tests](#tests)
-  -[Questions](#questions)
 
   ## Installation :floppy_disk:
   ${answers.installation}
