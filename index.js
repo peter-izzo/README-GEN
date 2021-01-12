@@ -83,7 +83,7 @@ const init = async () => {
         const answers = await promptUser();
         const md = generateReadMe(answers);
         //Write readme to dist folder
-        await writeFileAsync("READMETEST.md", md)
+        await writeFileAsync("README.md", md)
     } catch(err) {
         console.log(err);
     }
