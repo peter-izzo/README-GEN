@@ -18,10 +18,17 @@
   This is a application designed to take the hard parts out of creating a professional README for any project. Created with JS.
 
   ## Installation :floppy_disk:
-  To install this application you should: 1. `git clone https://github.com/peter-izzo/README-GEN` 2. `cd README-GEN` 3. `npm install`
+  To install this application you should: 
+  1. `git clone https://github.com/peter-izzo/README-GEN` 
+  2. `cd README-GEN` 
+  3. `npm install`
+  
+  ## Demo Video
+  [![ALT TEXT](https://img.youtube.com/vi/D50gnd1_mUI/0.jpg)](https://youtu.be/D50gnd1_mUI)
 
   ## Usage :warning:
-  Anyone who is creating a new project on Github that doesn't want to spend so much time trying to make their own README
+  Run the following command in the root of your project:
+  `node index.js`
 
   ## License :scroll:
   ![badge](https://img.shields.io/badge/license-Mozilla-brightgreen)
